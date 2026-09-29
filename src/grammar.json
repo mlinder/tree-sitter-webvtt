@@ -663,6 +663,10 @@
           },
           {
             "type": "SYMBOL",
+            "name": "_ws"
+          },
+          {
+            "type": "SYMBOL",
             "name": "entity"
           },
           {
@@ -700,7 +704,7 @@
     },
     "text": {
       "type": "PATTERN",
-      "value": "[^<&\\r\\n]+"
+      "value": "[^<&\\s]([^<&\\r\\n]*[^<&\\s])?"
     },
     "entity": {
       "type": "PATTERN",

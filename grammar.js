@@ -135,6 +135,7 @@ module.exports = grammar({
     // unbalanced tags are common and shouldn't break the rest of the line.
     cue_text: $ => repeat1(choice(
       $.text,
+      $._ws,
       $.entity,
       // Stray & and < aren't allowed unescaped but are common: a < that
       // can't start a tag (`3 < 4`) is text too.
@@ -145,7 +146,8 @@ module.exports = grammar({
       $.timestamp_tag,
     )),
 
-    text: _ => /[^<&\r\n]+/,
+    // Trimmed, so that text around tags joins with single spaces (outline)
+    text: _ => /[^<&\s]([^<&\r\n]*[^<&\s])?/,
 
     entity: _ => /&([a-zA-Z][a-zA-Z0-9]*|#[0-9]+|#[xX][0-9a-fA-F]+);/,
 

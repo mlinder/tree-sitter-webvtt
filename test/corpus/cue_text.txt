@@ -21,13 +21,11 @@ WEBVTT
       (text)
       (end_tag
         (tag_name))
-      (text)
       (start_tag
         (tag_name))
       (text)
       (end_tag
         (tag_name))
-      (text)
       (start_tag
         (tag_name))
       (text)
@@ -59,7 +57,6 @@ WEBVTT
       (text)
       (end_tag
         (tag_name))
-      (text)
       (start_tag
         (tag_name)
         (class_name)
@@ -67,7 +64,6 @@ WEBVTT
       (text)
       (end_tag
         (tag_name))
-      (text)
       (start_tag
         (tag_name)
         (annotation))
@@ -201,7 +197,6 @@ Fish & chips, 3 < 4
       (entity)
       (text)
       (entity)
-      (text)
       (entity))
     (cue_text
       (text)
