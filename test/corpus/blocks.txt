@@ -70,22 +70,30 @@ scroll:up
   (region
     (setting
       (setting_name)
-      (setting_value))
+      (setting_value
+        (setting_part)))
     (setting
       (setting_name)
-      (setting_value))
+      (setting_value
+        (setting_part)))
     (setting
       (setting_name)
-      (setting_value))
+      (setting_value
+        (setting_part)))
     (setting
       (setting_name)
-      (setting_value))
+      (setting_value
+        (setting_part)
+        (setting_part)))
     (setting
       (setting_name)
-      (setting_value))
+      (setting_value
+        (setting_part)
+        (setting_part)))
     (setting
       (setting_name)
-      (setting_value))))
+      (setting_value
+        (setting_part)))))
 
 ================================================================================
 Identifiers that start with a keyword

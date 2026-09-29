@@ -27,7 +27,7 @@ intro
 00:00:00.400 --> 00:00:06.080 align:left position:18%
 <b>Welcome</b> to the example.
 
-00:00:06.240 --> 00:00:10.880 region:bottom
+00:00:06.240 --> 00:00:10.880 region:bottom line:0,start position:10%,line-left
 <v Anna>— Did you hear that?</v>
 <v.loud Ben>— Hear &amp; see what?</v>
 

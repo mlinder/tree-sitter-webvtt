@@ -222,6 +222,21 @@
     }
   },
   {
+    "type": "setting_value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "setting_part",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "start_tag",
     "named": true,
     "fields": {
@@ -320,6 +335,10 @@
     }
   },
   {
+    "type": ",",
+    "named": false
+  },
+  {
     "type": "-->",
     "named": false
   },
@@ -384,7 +403,7 @@
     "named": true
   },
   {
-    "type": "setting_value",
+    "type": "setting_part",
     "named": true
   },
   {

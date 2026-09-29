@@ -19,10 +19,46 @@ Welcome to the example.
       (timestamp)
       (setting
         (setting_name)
-        (setting_value))
+        (setting_value
+          (setting_part)))
       (setting
         (setting_name)
-        (setting_value)))
+        (setting_value
+          (setting_part))))
+    (cue_text
+      (text))))
+
+================================================================================
+Compound setting values
+================================================================================
+
+WEBVTT
+
+00:00:01.000 --> 00:00:02.000 line:0,start position:10%,line-left align:end
+Text
+
+--------------------------------------------------------------------------------
+
+(webvtt
+  (header)
+  (cue
+    (cue_timing
+      (timestamp)
+      (timestamp)
+      (setting
+        (setting_name)
+        (setting_value
+          (setting_part)
+          (setting_part)))
+      (setting
+        (setting_name)
+        (setting_value
+          (setting_part)
+          (setting_part)))
+      (setting
+        (setting_name)
+        (setting_value
+          (setting_part))))
     (cue_text
       (text))))
 

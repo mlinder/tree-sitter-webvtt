@@ -23,7 +23,8 @@ lines don't cause errors.
     identifier: (cue_identifier)
     timing: (cue_timing
       start: (timestamp) end: (timestamp)
-      (setting name: (setting_name) value: (setting_value))*)
+      (setting name: (setting_name)
+        value: (setting_value (setting_part)+))*)  ; line:0,start
     (cue_text                     ; one per line
       (text) (entity) (timestamp_tag (timestamp))
       (start_tag name: (tag_name) class: (class_name)* annotation: (annotation))
@@ -33,6 +34,9 @@ lines don't cause errors.
 Tags are flat siblings rather than nested, so a tag closed on a later line
 (`<c.a>…` / `…</c>`) doesn't affect how the rest is parsed. The `stylesheet`
 node is meant for CSS injection.
+
+Line endings may be LF or CRLF. A lone CR, which the specification also
+allows, isn't supported.
 
 Used by the [WebVTT extension for Zed](https://github.com/mlinder/zed-webvtt).
 

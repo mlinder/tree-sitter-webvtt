@@ -129,7 +129,15 @@ module.exports = grammar({
     ),
 
     setting_name: _ => /[^\s:]+/,
-    setting_value: _ => /[^\s]+/,
+
+    // Comma-separated parts: line:0,start, position:10%,line-left,
+    // regionanchor:0%,100%
+    setting_value: $ => seq(
+      $.setting_part,
+      repeat(seq(',', optional($.setting_part))),
+    ),
+
+    setting_part: _ => /[^\s,]+/,
 
     // One line of cue text. Tags are kept flat rather than nested, since
     // unbalanced tags are common and shouldn't break the rest of the line.
