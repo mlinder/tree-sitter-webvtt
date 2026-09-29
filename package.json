@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-webvtt",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Tree-sitter grammar for WebVTT subtitles and captions",
   "license": "MIT",
   "author": "Marcus Linder <mlinder@gmail.com>",
