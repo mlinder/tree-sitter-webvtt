@@ -1,0 +1,21 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "webvtt",
+      "camelcase": "Webvtt",
+      "title": "WebVTT",
+      "scope": "text.webvtt",
+      "path": ".",
+      "file-types": ["vtt", "webvtt"],
+      "injection-regex": "^(webvtt|vtt)$"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Tree-sitter grammar for WebVTT subtitles and captions",
+    "authors": [{ "name": "Marcus Linder", "email": "mlinder@gmail.com" }],
+    "links": { "repository": "https://github.com/mlinder/tree-sitter-webvtt" }
+  }
+}

@@ -1,0 +1,211 @@
+================================================================================
+Formatting tags
+================================================================================
+
+WEBVTT
+
+00:00:01.000 --> 00:00:02.000
+<b>bold</b> <i>italic</i> <u>underline</u>
+
+--------------------------------------------------------------------------------
+
+(webvtt
+  (header)
+  (cue
+    (cue_timing
+      (timestamp)
+      (timestamp))
+    (cue_text
+      (start_tag
+        (tag_name))
+      (text)
+      (end_tag
+        (tag_name))
+      (text)
+      (start_tag
+        (tag_name))
+      (text)
+      (end_tag
+        (tag_name))
+      (text)
+      (start_tag
+        (tag_name))
+      (text)
+      (end_tag
+        (tag_name)))))
+
+================================================================================
+Voice, class and language tags
+================================================================================
+
+WEBVTT
+
+00:00:01.000 --> 00:00:02.000
+<v.loud Anna>Hello</v> <c.yellow.bg_blue>there</c> <lang sv>hej</lang>
+
+--------------------------------------------------------------------------------
+
+(webvtt
+  (header)
+  (cue
+    (cue_timing
+      (timestamp)
+      (timestamp))
+    (cue_text
+      (start_tag
+        (tag_name)
+        (class_name)
+        (annotation))
+      (text)
+      (end_tag
+        (tag_name))
+      (text)
+      (start_tag
+        (tag_name)
+        (class_name)
+        (class_name))
+      (text)
+      (end_tag
+        (tag_name))
+      (text)
+      (start_tag
+        (tag_name)
+        (annotation))
+      (text)
+      (end_tag
+        (tag_name)))))
+
+================================================================================
+Tags nested across lines
+================================================================================
+
+WEBVTT
+
+00:00:01.000 --> 00:00:02.000
+<c.outer><c.inner><i>First</i></c>
+<c.inner><i>Second</i></c></c>
+
+--------------------------------------------------------------------------------
+
+(webvtt
+  (header)
+  (cue
+    (cue_timing
+      (timestamp)
+      (timestamp))
+    (cue_text
+      (start_tag
+        (tag_name)
+        (class_name))
+      (start_tag
+        (tag_name)
+        (class_name))
+      (start_tag
+        (tag_name))
+      (text)
+      (end_tag
+        (tag_name))
+      (end_tag
+        (tag_name)))
+    (cue_text
+      (start_tag
+        (tag_name)
+        (class_name))
+      (start_tag
+        (tag_name))
+      (text)
+      (end_tag
+        (tag_name))
+      (end_tag
+        (tag_name))
+      (end_tag
+        (tag_name)))))
+
+================================================================================
+Ruby
+================================================================================
+
+WEBVTT
+
+00:00:01.000 --> 00:00:02.000
+<ruby>漢<rt>kan</rt></ruby>
+
+--------------------------------------------------------------------------------
+
+(webvtt
+  (header)
+  (cue
+    (cue_timing
+      (timestamp)
+      (timestamp))
+    (cue_text
+      (start_tag
+        (tag_name))
+      (text)
+      (start_tag
+        (tag_name))
+      (text)
+      (end_tag
+        (tag_name))
+      (end_tag
+        (tag_name)))))
+
+================================================================================
+Karaoke timestamps
+================================================================================
+
+WEBVTT
+
+00:00:01.000 --> 00:00:04.000
+One <00:00:02.000>two <00:00:03.000>three
+
+--------------------------------------------------------------------------------
+
+(webvtt
+  (header)
+  (cue
+    (cue_timing
+      (timestamp)
+      (timestamp))
+    (cue_text
+      (text)
+      (timestamp_tag
+        (timestamp))
+      (text)
+      (timestamp_tag
+        (timestamp))
+      (text))))
+
+================================================================================
+Entities and stray characters
+================================================================================
+
+WEBVTT
+
+00:00:01.000 --> 00:00:02.000
+Fish &amp; chips &lt;3 &#8212; &#x2014;
+Fish & chips, 3 < 4
+
+--------------------------------------------------------------------------------
+
+(webvtt
+  (header)
+  (cue
+    (cue_timing
+      (timestamp)
+      (timestamp))
+    (cue_text
+      (text)
+      (entity)
+      (text)
+      (entity)
+      (text)
+      (entity)
+      (text)
+      (entity))
+    (cue_text
+      (text)
+      (text)
+      (text)
+      (text)
+      (text))))

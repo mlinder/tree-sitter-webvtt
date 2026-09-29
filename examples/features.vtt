@@ -1,0 +1,36 @@
+WEBVTT Example captions
+Kind: captions
+Language: en
+
+NOTE
+This file is fictional and shows every block type.
+
+STYLE
+::cue {
+  color: #dfdfdf;
+}
+::cue(.yellow) {
+  color: yellow;
+}
+
+REGION
+id:bottom
+width:40%
+lines:3
+regionanchor:0%,100%
+viewportanchor:10%,90%
+scroll:up
+
+NOTE Cues can have identifiers
+
+intro
+00:00:00.400 --> 00:00:06.080 align:left position:18%
+<b>Welcome</b> to the example.
+
+00:00:06.240 --> 00:00:10.880 region:bottom
+<v Anna>— Did you hear that?</v>
+<v.loud Ben>— Hear &amp; see what?</v>
+
+01:00:11.040 --> 01:00:15.560 line:0 size:50% vertical:rl
+<c.yellow.bg_blue>Karaoke</c> <00:00:12.000>style <i>timing</i> &lt;3
+<lang sv>Hej!</lang> <ruby>漢<rt>kan</rt></ruby>

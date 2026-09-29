@@ -1,0 +1,21 @@
+{
+  "name": "tree-sitter-webvtt",
+  "version": "0.1.0",
+  "description": "Tree-sitter grammar for WebVTT subtitles and captions",
+  "license": "MIT",
+  "author": "Marcus Linder <mlinder@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlinder/tree-sitter-webvtt.git"
+  },
+  "keywords": ["tree-sitter", "parser", "webvtt", "vtt", "subtitles", "captions"],
+  "private": true,
+  "scripts": {
+    "generate": "tree-sitter generate",
+    "parse": "tree-sitter parse",
+    "test": "tree-sitter test && tree-sitter parse --quiet examples/*"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "0.25.10"
+  }
+}

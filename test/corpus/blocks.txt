@@ -1,0 +1,132 @@
+================================================================================
+Single-line note
+================================================================================
+
+WEBVTT
+
+NOTE This is a comment
+
+--------------------------------------------------------------------------------
+
+(webvtt
+  (header)
+  (comment))
+
+================================================================================
+Multi-line note
+================================================================================
+
+WEBVTT
+
+NOTE
+First line
+Second line
+
+--------------------------------------------------------------------------------
+
+(webvtt
+  (header)
+  (comment))
+
+================================================================================
+Style block
+================================================================================
+
+WEBVTT
+
+STYLE
+::cue {
+  color: #dfdfdf;
+}
+::cue(.yellow) {
+  color: yellow;
+}
+
+--------------------------------------------------------------------------------
+
+(webvtt
+  (header)
+  (style
+    (stylesheet)))
+
+================================================================================
+Region block
+================================================================================
+
+WEBVTT
+
+REGION
+id:bottom
+width:40%
+lines:3
+regionanchor:0%,100%
+viewportanchor:10%,90%
+scroll:up
+
+--------------------------------------------------------------------------------
+
+(webvtt
+  (header)
+  (region
+    (setting
+      (setting_name)
+      (setting_value))
+    (setting
+      (setting_name)
+      (setting_value))
+    (setting
+      (setting_name)
+      (setting_value))
+    (setting
+      (setting_name)
+      (setting_value))
+    (setting
+      (setting_name)
+      (setting_value))
+    (setting
+      (setting_name)
+      (setting_value))))
+
+================================================================================
+Identifiers that start with a keyword
+================================================================================
+
+WEBVTT
+
+NOTES
+00:00:01.000 --> 00:00:02.000
+One
+
+STYLE sheet
+00:00:02.000 --> 00:00:03.000
+Two
+
+REGIONAL
+00:00:03.000 --> 00:00:04.000
+Three
+
+--------------------------------------------------------------------------------
+
+(webvtt
+  (header)
+  (cue
+    (cue_identifier)
+    (cue_timing
+      (timestamp)
+      (timestamp))
+    (cue_text
+      (text)))
+  (cue
+    (cue_identifier)
+    (cue_timing
+      (timestamp)
+      (timestamp))
+    (cue_text
+      (text)))
+  (cue
+    (cue_identifier)
+    (cue_timing
+      (timestamp)
+      (timestamp))
+    (cue_text
+      (text))))
