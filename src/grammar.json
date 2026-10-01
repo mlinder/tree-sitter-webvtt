@@ -732,54 +732,90 @@
       "value": "[^\\s,]+"
     },
     "cue_text": {
-      "type": "REPEAT1",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "text"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_ws"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "entity"
-          },
-          {
-            "type": "ALIAS",
-            "content": {
-              "type": "STRING",
-              "value": "&"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "dialogue_dash"
             },
-            "named": true,
-            "value": "text"
-          },
-          {
-            "type": "ALIAS",
-            "content": {
-              "type": "PATTERN",
-              "value": "<[^a-zA-Z0-9\\/\\r\\n]"
-            },
-            "named": true,
-            "value": "text"
-          },
-          {
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_cue_text_part"
+              }
+            }
+          ]
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
             "type": "SYMBOL",
-            "name": "start_tag"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "end_tag"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "timestamp_tag"
+            "name": "_cue_text_part"
           }
-        ]
+        }
+      ]
+    },
+    "dialogue_dash": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 1,
+        "content": {
+          "type": "PATTERN",
+          "value": "[-–—]"
+        }
       }
+    },
+    "_cue_text_part": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "text"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_ws"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "entity"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "STRING",
+            "value": "&"
+          },
+          "named": true,
+          "value": "text"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "PATTERN",
+            "value": "<[^a-zA-Z0-9\\/\\r\\n]"
+          },
+          "named": true,
+          "value": "text"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "start_tag"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "end_tag"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "timestamp_tag"
+        }
+      ]
     },
     "text": {
       "type": "PATTERN",

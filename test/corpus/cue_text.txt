@@ -204,3 +204,35 @@ Fish & chips, 3 < 4
       (text)
       (text)
       (text))))
+
+================================================================================
+Dialogue dashes
+================================================================================
+
+WEBVTT
+
+00:00:01.000 --> 00:00:02.000
+–Men släpp! – Jag ljuger inte!
+- <i>Nej.</i>
+—
+
+--------------------------------------------------------------------------------
+
+(webvtt
+  (header)
+  (cue
+    timing: (cue_timing
+      start: (timestamp)
+      end: (timestamp))
+    (cue_text
+      (dialogue_dash)
+      (text))
+    (cue_text
+      (dialogue_dash)
+      (start_tag
+        name: (tag_name))
+      (text)
+      (end_tag
+        name: (tag_name)))
+    (cue_text
+      (dialogue_dash))))

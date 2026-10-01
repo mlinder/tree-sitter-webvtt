@@ -154,7 +154,16 @@ module.exports = grammar({
 
     // One line of cue text. Tags are kept flat rather than nested, since
     // unbalanced tags are common and shouldn't break the rest of the line.
-    cue_text: $ => repeat1(choice(
+    cue_text: $ => choice(
+      seq($.dialogue_dash, repeat($._cue_text_part)),
+      repeat1($._cue_text_part),
+    ),
+
+    // A new speaker's line: –Hej. / - Hej. Outranks text, which would
+    // otherwise take the dash as its first character.
+    dialogue_dash: _ => token(prec(1, /[-–—]/)),
+
+    _cue_text_part: $ => choice(
       $.text,
       $._ws,
       $.entity,
@@ -165,7 +174,7 @@ module.exports = grammar({
       $.start_tag,
       $.end_tag,
       $.timestamp_tag,
-    )),
+    ),
 
     // Trimmed, so that text around tags joins with single spaces (outline)
     text: _ => /[^<&\s]([^<&\r\n]*[^<&\s])?/,

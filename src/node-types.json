@@ -49,6 +49,10 @@
       "required": false,
       "types": [
         {
+          "type": "dialogue_dash",
+          "named": true
+        },
+        {
           "type": "end_tag",
           "named": true
         },
@@ -393,6 +397,10 @@
   },
   {
     "type": "comment",
+    "named": true
+  },
+  {
+    "type": "dialogue_dash",
     "named": true
   },
   {
