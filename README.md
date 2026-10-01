@@ -40,6 +40,8 @@ Line endings may be LF or CRLF. A lone CR, which the specification also
 allows, isn't supported.
 
 Used by the [WebVTT extension for Zed](https://github.com/mlinder/zed-webvtt).
+`queries/` has its highlight and CSS injection queries, with Zed's capture
+names, for other tree-sitter hosts.
 
 ## Development
 
