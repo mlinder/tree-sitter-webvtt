@@ -16,6 +16,10 @@ module.exports = grammar({
 
   externals: $ => [$._timestamp_start],
 
+  // Whether opening tags at the start of a line lead up to a dialogue dash
+  // is only known once the dash (or anything else) follows
+  conflicts: $ => [[$.cue_text, $._cue_text_part]],
+
   rules: {
     // Blocks are separated by blank lines, lexed as one _blank token, so a
     // single line break always continues the current block. Each block
@@ -155,13 +159,19 @@ module.exports = grammar({
     // One line of cue text. Tags are kept flat rather than nested, since
     // unbalanced tags are common and shouldn't break the rest of the line.
     cue_text: $ => choice(
-      seq($.dialogue_dash, repeat($._cue_text_part)),
+      seq(
+        repeat($.start_tag),
+        field('dash', $.dialogue_dash),
+        repeat($._cue_text_part),
+      ),
       repeat1($._cue_text_part),
     ),
 
-    // A new speaker's line: –Hej. / - Hej. Outranks text, which would
-    // otherwise take the dash as its first character.
-    dialogue_dash: _ => token(prec(1, /[-–—]/)),
+    // A new speaker's line, also after opening tags: –Hej. / - Hej. /
+    // <i>–Hej. The dashes are Linguist's, including CJK wave and full-width
+    // ones. Outranks text, which would otherwise take the dash as its first
+    // character.
+    dialogue_dash: _ => token(prec(1, /[-–—―⸺⸻〜〰︱︲﹘﹣－]/)),
 
     _cue_text_part: $ => choice(
       $.text,

@@ -43,15 +43,22 @@
   {
     "type": "cue_text",
     "named": true,
-    "fields": {},
+    "fields": {
+      "dash": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "dialogue_dash",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
       "types": [
-        {
-          "type": "dialogue_dash",
-          "named": true
-        },
         {
           "type": "end_tag",
           "named": true

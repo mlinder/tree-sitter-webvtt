@@ -738,8 +738,19 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "dialogue_dash"
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "start_tag"
+              }
+            },
+            {
+              "type": "FIELD",
+              "name": "dash",
+              "content": {
+                "type": "SYMBOL",
+                "name": "dialogue_dash"
+              }
             },
             {
               "type": "REPEAT",
@@ -766,7 +777,7 @@
         "value": 1,
         "content": {
           "type": "PATTERN",
-          "value": "[-–—]"
+          "value": "[-–—―⸺⸻〜〰︱︲﹘﹣－]"
         }
       }
     },
@@ -951,7 +962,12 @@
     }
   },
   "extras": [],
-  "conflicts": [],
+  "conflicts": [
+    [
+      "cue_text",
+      "_cue_text_part"
+    ]
+  ],
   "precedences": [],
   "externals": [
     {

@@ -26,7 +26,7 @@ lines don't cause errors.
       (setting name: (setting_name)
         value: (setting_value (setting_part)+))*)  ; line:0,start
     (cue_text                     ; one per line
-      (dialogue_dash)             ; – at the start: a new speaker
+      dash: (dialogue_dash)       ; – at the start, or after opening tags
       (text) (entity) (timestamp_tag (timestamp))
       (start_tag name: (tag_name) class: (class_name)* annotation: (annotation))
       (end_tag name: (tag_name)))))
