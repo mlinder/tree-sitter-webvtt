@@ -14,6 +14,8 @@ module.exports = grammar({
   // is matched explicitly.
   extras: _ => [],
 
+  externals: $ => [$._timestamp_start],
+
   rules: {
     // Blocks are separated by blank lines, lexed as one _blank token, so a
     // single line break always continues the current block. Each block
@@ -112,9 +114,20 @@ module.exports = grammar({
       optional(seq($._ws, optional($._settings))),
     ),
 
-    // The spec requires two or more hour digits when hours are present;
-    // one is accepted here so that highlighting survives the typo.
-    timestamp: _ => /([0-9]+:)?[0-9][0-9]:[0-9][0-9]\.[0-9][0-9][0-9]/,
+    // [hh:]mm:ss.ttt, with the separators as their own nodes. The scanner
+    // checks the whole shape first, so a numeric cue identifier such as
+    // `12` doesn't start one. The spec requires two or more hour digits when
+    // hours are present; one is accepted so that highlighting survives the
+    // typo.
+    timestamp: $ => seq(
+      $._timestamp_start,
+      /[0-9]+/,
+      ':',
+      /[0-9]+/,
+      optional(seq(':', /[0-9]+/)),
+      '.',
+      /[0-9]+/,
+    ),
 
     // Space-separated name:value pairs, for both cues and regions
     _settings: $ => seq(

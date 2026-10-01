@@ -288,6 +288,11 @@
     }
   },
   {
+    "type": "timestamp",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "timestamp_tag",
     "named": true,
     "fields": {},
@@ -416,10 +421,6 @@
   },
   {
     "type": "text",
-    "named": true
-  },
-  {
-    "type": "timestamp",
     "named": true
   },
   {

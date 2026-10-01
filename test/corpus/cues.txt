@@ -88,6 +88,50 @@ Second line
       (text))))
 
 ================================================================================
+Identifiers that look like timestamps
+================================================================================
+
+WEBVTT
+
+12
+00:00:01.000 --> 00:00:02.000
+A
+
+10:30
+00:00:02.000 --> 00:00:03.000
+B
+
+00:00:03
+1:00:00.000 --> 123:00:00.000
+C
+
+--------------------------------------------------------------------------------
+
+(webvtt
+  (header)
+  (cue
+    (cue_identifier)
+    (cue_timing
+      (timestamp)
+      (timestamp))
+    (cue_text
+      (text)))
+  (cue
+    (cue_identifier)
+    (cue_timing
+      (timestamp)
+      (timestamp))
+    (cue_text
+      (text)))
+  (cue
+    (cue_identifier)
+    (cue_timing
+      (timestamp)
+      (timestamp))
+    (cue_text
+      (text))))
+
+================================================================================
 Short timestamps without spaces around the arrow
 ================================================================================
 

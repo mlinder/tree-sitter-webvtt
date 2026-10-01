@@ -22,7 +22,7 @@ lines don't cause errors.
   (cue
     identifier: (cue_identifier)
     timing: (cue_timing
-      start: (timestamp) end: (timestamp)
+      start: (timestamp) end: (timestamp)   ; ":" and "." are child nodes
       (setting name: (setting_name)
         value: (setting_value (setting_part)+))*)  ; line:0,start
     (cue_text                     ; one per line
