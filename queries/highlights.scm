@@ -32,10 +32,11 @@
 
 (setting ":" @punctuation.delimiter)
 
-; Region names: region:bottom, id:bottom
+; Region names, like cue identifiers: id:bottom defines one, region:bottom
+; refers to it
 ((setting
    name: (setting_name) @_name
-   value: (setting_value) @string)
+   value: (setting_value) @label)
  (#any-of? @_name "region" "id"))
 
 ; Values the spec allows for each setting, in each part (the second part
