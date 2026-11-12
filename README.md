@@ -89,8 +89,8 @@ pnpm test           # corpus tests, examples/, Node binding
 pnpm run build:wasm # tree-sitter-webvtt.wasm
 ```
 
-A `v*` tag builds the binaries and the Wasm file and publishes to npm
-(`.github/workflows/release.yml`).
+A `v*` tag builds the binaries and the Wasm file and stages the package on
+npm (`.github/workflows/release.yml`); approve it on npmjs.com to publish.
 
 ## License
 
